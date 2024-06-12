@@ -1,0 +1,111 @@
+soal nomor 5
+
+SELECT 
+    sdm.nomor_pegawai,
+    sdm.pendidikan_terakhir,
+    keuangan.gaji,
+    produksi.jumlah_produksi
+FROM 
+    sdm
+JOIN 
+    keuangan ON sdm.nomor_pegawai = keuangan.nomor_pegawai
+JOIN 
+    produksi ON sdm.nomor_pegawai = produksi.nomor_pegawai
+WHERE 
+    sdm.pendidikan_terakhir = 'S2' 
+    AND CAST(keuangan.gaji AS UNSIGNED) < 10000000 
+    AND produksi.jumlah_produksi > 1000;
+
+hasil:
+
+terdapat 2 user yang memenuhi syarat yaitu user (5,10)
+
+soal nomor 6 
+
+SELECT 
+    it.nomor_pegawai,
+    it.status_parangkat,
+    produksi.jumlah_produksi
+FROM 
+    it
+JOIN 
+    produksi ON it.nomor_pegawai = produksi.nomor_pegawai
+WHERE 
+    it.status_parangkat = 'aktif'
+    AND produksi.jumlah_produksi = 0
+ORDER BY 
+    it.nomor_pegawai;
+
+hasilnya null
+
+soal nomor 7
+
+SELECT
+	produksi.nomor_pegawai,
+	produksi.lokasi_produksi,
+	keuangan.tanggal_gajian,
+	sdm.jabatan,
+	sdm.jabatan,
+	sdm.nilai_pegawai
+ 
+ FROM
+ produksi
+ 
+ JOIN 
+ keuangan ON produksi.nomor_pegawai = keuangan.nomor_pegawai
+ 
+ JOIN 
+ sdm ON produksi.nomor_pegawai = sdm.nomor_pegawai
+ 
+ WHERE 
+ keuangan.tanggal_gajian BETWEEN '2024-06-20' AND '2024-06-30'
+    AND sdm.nilai_pegawai > 85
+    AND produksi.lokasi_produksi IN ('Jakarta', 'Surabaya', 'Bekasi', 'Bandung')
+ORDER BY 
+    sdm.nomor_pegawai;
+
+hasilnya terdapat 2 user yaitu user (2, 10)
+
+soal nomor 8 
+
+SELECT 
+    sistem_user.nama,
+	sistem_user.username,
+	sistem_user.password,
+	sistem_user.unit_kerja,
+	sistem_user.foto,
+	sistem_user.ip,
+	sistem_user.status,
+	sistem_user.nomor_pegawai,
+    keuangan.gaji,
+    keuangan.tanggal_gajian,
+    keuangan.tunjangan,
+    keuangan.bonus,
+    keuangan.potongan,
+    sdm.no_kk,
+    sdm.no_ktp,
+    sdm.alamat_pegawai,
+    sdm.nama_istri,
+    sdm.jabatan,
+    sdm.nilai_pegawai,
+    produksi.jumlah_produksi,
+    produksi.lokasi_produksi,
+    produksi.status_produksi,
+    oprasional.input_pekerjaan,
+    oprasional.output_pekerjaan,
+    oprasional.proses_pekerjaan,
+    oprasional.status_pekerjaan
+FROM 
+    sistem_user
+    
+LEFT JOIN
+	sdm ON sistem_user.nomor_pegawai = sdm.nomor_pegawai
+LEFT JOIN 
+    keuangan ON sistem_user.nomor_pegawai = keuangan.nomor_pegawai
+LEFT JOIN 
+    produksi ON sistem_user.nomor_pegawai = produksi.nomor_pegawai
+LEFT JOIN
+	oprasional ON sistem_user.nomor_pegawai = oprasional.nomor_pegawai
+ORDER BY 
+    sistem_user.nomor_pegawai;
+
