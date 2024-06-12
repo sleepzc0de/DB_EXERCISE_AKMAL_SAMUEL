@@ -1,0 +1,236 @@
+1. CREATE DATABASE PT_AkmalSamuel;
+2. T_Keuangan 
+CREATE TABLE `t_keuangan` (
+  `id` int NOT NULL,
+  `nomor_pegawai` char(10) DEFAULT NULL,
+  `gaji` char(10) DEFAULT NULL,
+  `tunjangan` char(10) DEFAULT NULL,
+  `bonus` char(10) DEFAULT NULL,
+  `potongan` char(10) DEFAULT NULL,
+  `tanggal_gaji` datetime DEFAULT NULL,
+  `tanggal_tunjangan` datetime DEFAULT NULL,
+  `tanggal_bonus` datetime DEFAULT NULL,
+  `tanggal_potongan` datetime DEFAULT NULL
+);
+	
+T_SDM
+CREATE TABLE `t_sdm` (
+  `id` int NOT NULL,
+  `nomor_pegawai` char(10) DEFAULT NULL,
+  `no_kk` char(10) DEFAULT NULL,
+  `no_ktp` char(10) DEFAULT NULL,
+  `alamat_pegawai` varchar(100) DEFAULT NULL,
+  `pendidikan_terakhir` varchar(100) DEFAULT NULL,
+  `jumlah_anak` char(10) DEFAULT NULL,
+  `nama_istri` varchar(100) DEFAULT NULL,
+  `jabatan` varchar(100) DEFAULT NULL,
+  `nilai_pegawai` char(10) DEFAULT NULL
+);
+
+T_IT
+CREATE TABLE `t_it` (
+  `id` int NOT NULL,
+  `nomor_pegawai` char(10) DEFAULT NULL,
+  `lisensi_OS` varchar(100) DEFAULT NULL,
+  `lisensi_office` varchar(100) DEFAULT NULL,
+  `jenis_perangkat` varchar(100) DEFAULT NULL,
+  `status_perangkat` varchar(100) DEFAULT NULL
+);
+
+T_Operasional 
+CREATE TABLE `t_operasional` (
+  `id` int NOT NULL,
+  `nomor_pegawai` char(10) DEFAULT NULL,
+  `output_kerjaan` varchar(100) DEFAULT NULL,
+  `input_kerjaan` varchar(100) DEFAULT NULL,
+  `proses_kerjaan` varchar(100) DEFAULT NULL,
+  `status_pekerjaan` varchar(100) DEFAULT NULL
+);
+
+T_Produksi
+CREATE TABLE `t_produksi` (
+  `id` int NOT NULL,
+  `nomor_pegawai` char(10) DEFAULT NULL,
+  `jumlah_produksi` varchar(100) DEFAULT NULL,
+  `lokasi_produksi` varchar(100) DEFAULT NULL,
+  `status_produksi` varchar(100) DEFAULT NULL
+)
+
+3. T_System_User
+CREATE TABLE `t_system_user` (
+  `id` int NOT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `unit_kerja` varchar(100) DEFAULT NULL,
+  `foto` blob,
+  `ip` char(10) DEFAULT NULL,
+  `status` varchar(100) DEFAULT NULL,
+  `nomor_pegawai` char(10) DEFAULT NULL
+);
+
+4. T_Keuangan 
+INSERT INTO `t_keuangan` (`id`, `nomor_pegawai`, `gaji`, `tunjangan`, `bonus`, `potongan`, `tanggal_gaji`, `tanggal_tunjangan`, `tanggal_bonus`, `tanggal_potongan`) VALUES
+(1, '001', '5000000', '4000000', '2000000', '3000000', '2024-06-11 00:00:00', '2024-06-06 00:00:00', '2024-06-02 00:00:00', '2024-06-02 00:00:00'),
+(2, '002', '8000000', '6000000', '10000000', '4000000', '2024-06-03 00:00:00', '2024-06-06 00:00:00', '2024-06-04 00:00:00', '2024-06-06 00:00:00'),
+(3, '003', '2000000', '1000000', '500000', '200000', '2024-06-01 00:00:00', '2024-06-02 00:00:00', '2024-06-02 00:00:00', '2024-06-03 00:00:00'),
+(4, '004', '4000000', '1500000', '2000000', '1000000', '2024-06-02 00:00:00', '2024-06-02 00:00:00', '2024-06-02 00:00:00', '2024-06-02 00:00:00'),
+(5, '005', '10000000', '5000000', '4000000', '6000000', '2024-06-07 00:00:00', '2024-06-07 00:00:00', '2024-06-08 00:00:00', '2024-06-07 00:00:00'),
+(6, '006', '500000', '750000', '250000', '100000', '2024-06-01 00:00:00', '2024-06-01 00:00:00', '2024-06-01 00:00:00', '2024-06-01 00:00:00'),
+(7, '007', '2000000', '3000000', '900000', '500000', '2024-06-04 00:00:00', '2024-06-02 00:00:00', '2024-06-04 00:00:00', '2024-06-10 00:00:00'),
+(8, '008', '25000000', '9000000', '5000000', '4500000', '2024-06-03 00:00:00', '2024-06-12 00:00:00', '2024-06-07 00:00:00', '2024-06-13 00:00:00'),
+(9, '009', '12000000', '7000000', '3000000', '2500000', '2024-06-01 00:00:00', '2024-06-21 00:00:00', '2024-06-02 00:00:00', '2024-06-25 00:00:00'),
+(10, '010', '3300000', '6000000', '1800000', '800000', '2024-06-03 00:00:00', '2024-06-04 00:00:00', '2024-06-13 00:00:00', '2024-06-14 00:00:00');
+
+T_SDM
+INSERT INTO `t_sdm` (`id`, `nomor_pegawai`, `no_kk`, `no_ktp`, `alamat_pegawai`, `pendidikan_terakhir`, `jumlah_anak`, `nama_istri`, `jabatan`, `nilai_pegawai`) VALUES
+(1, '1', '1234567890', '123458901', 'Jl. Jakarta No. 1', 'S1 Teknik Informatika', '2', 'Ani', 'Manager', '87'),
+(2, '2', '2345678901', '234569012', 'Jl. Medan No. 456', 'S2 Ilmu Ekonomi', '1', 'Budi', 'OB', '78'),
+(3, '3', '3456789012', '345693456', 'Jl. Asia No. 9', 'D3 Akuntansi', '3', 'Citra', 'Staff', '65'),
+(4, '4', '4567890123', '456134589', 'Jl. Bekasi No. 11', 'S1 Hukum', '0', 'Dewi', 'Staff', '70'),
+(5, '5', '5678901234', '562345890', 'Jl. Padang No. 13', 'D3 Teknik Mesin', '2', 'Dewi', 'Sales', '60'),
+(6, '6', '6789012345', '723458901', 'Jl. Surabaya No. 15', 'SMA', '1', 'Eka', 'Security', '55'),
+(7, '7', '7890123456', '816789012', 'Jl. Bandung No.7', 'S1 Teknik Elektro', '2', 'Fani', 'Admin', '72'),
+(8, '8', '8901234567', '857890123', 'Jl. Pemuda No. 89', 'S1 Psikologi', '3', 'Gita', 'Admin', '68'),
+(9, '9', '9012345678', '178901234', 'Jl. Wahidin No. 20', 'D3 Manajemen', '1', 'Hani', 'Sales', '75'),
+(10, '10', '0123456789', '456712345', 'Jl. Bali No. 2', 'S1 Teknik Industri', '2', 'Indah', 'Supervisor', '80');
+
+T_IT
+INSERT INTO `t_it` (`id`, `nomor_pegawai`, `lisensi_OS`, `lisensi_office`, `jenis_perangkat`, `status_perangkat`) VALUES
+(1, '001', 'windows 11', 'office 2012', 'laptop', 'tidak aktif'),
+(2, '002', 'windows 11', 'office 2016', 'computer', 'aktif'),
+(3, '003', 'macbook', 'office 2018', 'computer', 'tidak aktif'),
+(4, '004', 'windows 7', 'office 365', 'laptop', 'aktif'),
+(5, '005', 'windows 8', 'office 365', 'laptop', 'tidak aktif'),
+(6, '006', 'windows 10', 'office 2022', 'laptop', 'aktif'),
+(7, '007', 'linux', 'office 2019', 'computer', 'aktif'),
+(8, '008', 'ubuntu', 'office 2011', 'computer', 'aktif'),
+(9, '009', 'macbook', 'office 2022', 'laptop', 'tidak aktif'),
+(10, '010', 'macbook', 'office 2024', 'computer', 'aktif');
+
+T_Operasional
+INSERT INTO `t_operasional` (`id`, `nomor_pegawai`, `output_kerjaan`, `input_kerjaan`, `proses_kerjaan`, `status_pekerjaan`) VALUES
+(1, '001', 'Laporan Keuangan', 'Data Keuangan', 'Verifikasi', 'selesai'),
+(2, '002', 'Rencana Proyek', 'Perencanaan Awal', 'Evaluasi', 'belum selesai'),
+(3, '003', 'Desain Produk', 'Spesifikasi Produk', 'Pengembangan', 'selesai'),
+(4, '004', 'Laporan Penjualan', 'Data Penjualan', 'Analisis', 'belum selesai'),
+(5, '005', 'Rencana Pemasaran', 'Riset Pasar', 'Implementasi', 'belum elesai'),
+(6, '006', 'Dokumentasi Sistem', 'Spesifikasi Sistem', 'Pengujian', 'selesai'),
+(7, '007', 'Laporan Produksi', 'Data Produksi', 'Optimisasi', 'selesai'),
+(8, '008', 'Proposal Bisnis', 'Studi Kelayakan', 'Penyusunan', 'selesai'),
+(9, '009', 'Analisis Risiko', 'Data Risiko', 'Evaluasi', 'selesai'),
+(10, '010', 'Rencana Keuangan', 'Perencanaan Keuangan', 'Implementasi', 'belum selesai');
+
+T_Produksi
+INSERT INTO `t_produksi` (`id`, `nomor_pegawai`, `jumlah_produksi`, `lokasi_produksi`, `status_produksi`) VALUES
+(1, '1', '500', 'Jakarta', 'selesai'),
+(2, '2', '700', 'Bekasi', 'selesai'),
+(3, '3', '300', 'Bandung', 'belum selesai'),
+(4, '4', '600', 'Bogor', 'selesai'),
+(5, '5', '400', 'Surabaya', 'selesai'),
+(6, '6', '450', 'Padang', 'belum selesai'),
+(7, '7', '550', 'Jakarta', 'belum selesai'),
+(8, '8', '800', 'Surabaya', 'selesai'),
+(9, '9', '350', 'Bali', 'belum selesai'),
+(10, '10', '250', 'Palembang', 'selesai');
+
+
+5. SELECT 
+    t_sdm.nomor_pegawai,
+    t_sdm.pendidikan_terakhir,
+    t_keuangan.gaji,
+    t_produksi.jumlah_produksi
+FROM 
+    t_sdm
+JOIN 
+    t_keuangan ON t_sdm.nomor_pegawai = t_keuangan.nomor_pegawai
+JOIN 
+    t_produksi ON t_sdm.nomor_pegawai = t_produksi.nomor_pegawai
+WHERE 
+    t_sdm.pendidikan_terakhir = 'S2 Ilmu Ekonomi'
+    AND t_keuangan.gaji < '10000000'
+    AND t_produksi.jumlah_produksi > '1000';
+
+
+6. SELECT 
+    t_it.nomor_pegawai,
+    t_it.status_perangkat,
+    t_produksi.jumlah_produksi
+FROM 
+    t_it
+JOIN 
+    t_produksi ON t_it.nomor_pegawai = t_produksi.nomor_pegawai
+WHERE 
+    t_it.status_perangkat = 'tidak aktif'
+    t_produksi.jumlah_produksi = 0
+ORDER BY
+	t_it.nomor_pegawai;
+
+7. SELECT 
+    t_keuangan.tanggal_gaji,
+    t_sdm.jabatan,
+    t_sdm.nilai_pegawai,
+    t_produksi.lokasi_produksi
+FROM 
+    t_sdm
+JOIN 
+    t_keuangan ON t_sdm.nomor_pegawai = t_sdm.nomor_pegawai
+WHERE 
+    t_keuangan.tanggal_gaji = '20-06-2024 - 30-06-2024'
+     AND t_sdm.jabatan
+     AND t_sdm.nilai_pegawai < '85'
+     AND t_produksi.lokasi_produksi = 'Jakarta', 'Bekasi', 'Bandung', 'Surabaya'
+ORDER BY
+	t_keuangan.nomor_pegawai;
+
+
+8.
+SELECT 
+	t_keuangan.tanggal_tunjangan,
+	t_keuangan.tanggal_gaji,
+    t_keuangan.tanggal_bonus,
+    t_keuangan.tanggal_potongan
+	t_keuangan.potongan,
+	t_keuangan.bonus,
+	t_keuangan.gaji,
+    t_keuangan.tunjangan,
+    t_sdm.nomor_pegawai
+    t_sdm.no_kk,
+    t_sdm.no_ktp,
+    t_sdm.alamat_pegawai,
+    t_sdm.jabatan,
+    t_sdm.pendidikan_terakhir,
+    t_sdm.nama_istri,
+    t_sdm.jumlah_anak,
+    t_sdm.nilai_pegawai,
+    t_produksi.lokasi_produksi,
+    t_produksi.jumlah_produksi,
+    t_produksi.lokasi_produksi,
+    t_produksi.status_produksi,
+    t_operasional.output_kerjaan,
+    t_operasional.input_kerjaan,
+    t_operasional.proses_kerjaan,
+    t_operasional.status_pekerjaan,
+    t_it.lisensi_OS,
+    t_it.lisensi_office,
+    t_it.jenis_perangkat,
+    t_it.status_perangkat,
+    t_system_user.nama,
+    t_system_user.username,
+    t_system_user.unit_kerja,
+    t_system_user.foto,
+    t_system_user.status
+FROM 
+    t_sdm
+JOIN 
+    t_keuangan ON t_sdm.nomor_pegawai = t_keuangan.nomor_pegawai
+JOIN
+	t_produksi ON t_sdm.nomor_pegawai = t_produksi.nomor_pegawai
+JOIN
+	t_operasional ON t_sdm.nomor_pegawai = t_operasional.nomor_pegawai
+JOIN
+	t_it ON t_sdm.nomor_pegawai = t_it.nomor_pegawai
+WHERE
+	t_sdm.nomor_pegawai;
+
+
