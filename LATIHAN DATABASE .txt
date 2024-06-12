@@ -1,0 +1,16 @@
+LATIHAN DATABASE 
+
+1. buatkan database dengan nama "PT_AkmalSamual"
+2. dari database tersebut buatkan beberapa tabel yang dapat berelasi :
+- T_Keuangan (id, nomor_pegawai, gaji, tunjangan, bonus, potongan, tanggal_gaji, tanggal_tunjangan, tanggal_bonus, tanggal_potongan)
+- T_SDM (id, nomor_pegawai, no_kk, no_ktp, alamat_pegawai, pendidikan_terakhir, jumlah_anak, nama_istri, jabatan, nilai_pegawai)
+- T_IT (id, nomor_pegawai, lisensi_OS, lisensi_office, jenis_perangkat, status_perangkat) 
+- T_Operasional (id, nomor_pegawai, output_kerjaan, input_kerjaan, proses_kerjaan, status_pekerjaan)
+- T_Produksi (id, nomor_pegawai, jumlah_produksi, lokasi_produksi, status_produksi)
+
+3. lalu buatkan tabel terkait user sistem dengan nama tabel "T_System_User" dengan kolom (id, nama, username, password, unit_kerja, foto, ip, status, nomor_pegawai)  
+4. dari tabel T_Keuangan, T_SDM, T_IT, T_Operasional, T_Produksi inputkan data minimal 10 aja 
+5. dari tabel T_SDM,T_Keuangann dan T_Produksi carikan pegawai yang memiliki Pendidikan terakhir S2 dengan gaji dibawah 10 juta dan dengan jumlah produksi diatas 1000, lalu buatkan summarynya dalam bentuk query
+6. dari tabel T_IT dan T_Operasional carikan data dengan status perangkat tidak aktif dan jumlah produksi 0 urutkan berdasarkan nomor pegawai. Buatkan querynya
+7. dari tabel T_Produksi, T_Keuangan dan dan T_SDM carikan data tanggal gajian yang berada pada tanggal 20 juni 2024 sampai 30 juni 2024 dengan jabatan, nilai pegawai yang diatas 85, dan lokasi produksi yang berada di Jakarta Pusat, Bekasi dan Bandung serta Surabaya. Buatkan querynya
+8. Dari tabel-tabel tersebut, gue selaku pimpinan perusahaan mau seluruh tabel muncul dalam satu kali query, missal Data Samuel saya ingin tahu data keuangan, sdm, it, operasional dan produksinya serta informasi user pada sistemnya.
